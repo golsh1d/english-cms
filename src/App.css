@@ -1,0 +1,27 @@
+body , * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.App-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+}
+
+@media screen and (max-width : 768px){
+    .SideNavSm-menu-icon{
+        display: block;
+    }
+}
+
+@media screen and (min-width : 768px){
+    .SideNavSm-menu-icon{
+        display: none;
+    }
+}

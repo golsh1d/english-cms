@@ -1,0 +1,19 @@
+.SideNav-container{
+    width: 300px;
+    height: calc(100vh - 20px);
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #F8EDE3;
+}
+
+@media screen and (max-width : 768px){
+    .SideNav-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width : 768px){
+    .SideNav-container {
+        display: block;
+    }
+}

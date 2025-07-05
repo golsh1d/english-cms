@@ -1,0 +1,29 @@
+.SideNav-list{
+    width: 100%;
+}
+
+.SideNav-link{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.SideNav-link:hover{
+    background-color: #ECDFCC;
+}
+
+.SideNav-list-item{
+    display: inline;
+    font-size: 16px;
+    color: #3c3c3c;
+    margin-left: 5px;
+}
+
+.SideNav-icon{
+    width: 25px !important;
+    height: 25px !important;
+    color: #C7B7A3;
+}
