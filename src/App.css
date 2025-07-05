@@ -15,3 +15,23 @@ body , * {
     padding: 10px;
     position: relative;
 }
+
+.App-right-section {
+    height: min-content;
+    padding: 16px;
+    background-color: #EFF3EA;
+    border-radius: 10px;
+}
+
+@media screen and (max-width : 768px) {
+   .App-right-section {
+        width: 100%;
+        margin-left: 10px;
+    } 
+}
+
+@media screen and (min-width : 768px) {
+   .App-right-section {
+        width: calc(100% - 316px);
+    } 
+}

@@ -12,7 +12,7 @@ export default function App() {
     <div className="App-container">
       <SideNav />
       <SideNavSm />
-      {router}
+      <div className="App-right-section">{router}</div>
     </div>
   );
 }
