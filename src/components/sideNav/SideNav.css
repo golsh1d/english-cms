@@ -1,6 +1,6 @@
 .SideNav-container{
     width: 300px;
-    height: calc(100vh - 20px);
+    height: 100%;
     padding: 8px;
     border-radius: 10px;
     background-color: #F8EDE3;

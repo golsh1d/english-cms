@@ -7,21 +7,11 @@ body , * {
 }
 
 .App-container {
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding: 10px;
     position: relative;
-}
-
-@media screen and (max-width : 768px){
-    .SideNavSm-menu-icon{
-        display: block;
-    }
-}
-
-@media screen and (min-width : 768px){
-    .SideNavSm-menu-icon{
-        display: none;
-    }
 }
