@@ -10,19 +10,20 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useState, useEffect } from "react";
 
 export default function SaleChart() {
-  const data = [
-    { name: "PRD1", uv: 200, pv: 2400, amt: 2400 },
-    { name: "PRD2", uv: 400, pv: 2400, amt: 2400 },
-    { name: "PRD3", uv: 300, pv: 2400, amt: 2400 },
-    { name: "PRD4", uv: 500, pv: 2400, amt: 2400 },
-    { name: "PRD5", uv: 100, pv: 2400, amt: 2400 },
-  ];
+  const [salesData, setSalesData] = useState();
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/sales/`)
+      .then((res) => res.json())
+      .then((data) => setSalesData(data));
+  }, []);
 
   return (
     <ResponsiveContainer width="100%" height={250}>
-      <LineChart data={data}>
+      <LineChart data={salesData}>
         <CartesianGrid stroke="#aaa" strokeDasharray="5 5" />
         <Line
           type="monotone"
