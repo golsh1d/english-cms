@@ -27,3 +27,7 @@
     height: 25px !important;
     color: #C7B7A3;
 }
+
+.active {
+    background-color: #ECDFCC;
+}
