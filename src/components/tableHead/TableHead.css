@@ -1,0 +1,82 @@
+.TableHead-container{
+    width: 100%;
+    height: min-content;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.TableHead-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TableHead-sort-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.TableHead-sort-icon-wrapper{
+    position: relative;
+}
+
+.TableHead-sort-icon-wrapper:hover .TableHead-sort-icon-sub-menu{
+    display: block;
+}
+
+.TableHead-sort-icon-sub-menu{
+    padding: 8px 0px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px #dadada;
+    border-radius: 10px;
+    position: absolute;
+    top: 10;
+    right: 0;
+    display: none;
+}
+
+.TableHead-sort-icon-sub-menu-item{
+    width: 100%;
+    cursor: pointer;
+}
+
+.TableHead-sort-icon-sub-menu-item:not(:last-child) {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #efefef;
+}
+
+.TableHead-sort-icon-sub-menu-item:not(:first-child) {
+    padding-top: 8px;
+}
+
+@media screen and (max-width : 768px) {
+   .TableHead-cell{
+        font-size: 10px;
+        font-weight: 400;
+    } 
+    .TableHead-sort-icon{
+        width: 16px !important;
+        height: 16px !important;
+    }
+    .TableHead-sort-icon-sub-menu{
+        width: 70px;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    .TableHead-cell{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .TableHead-sort-icon{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .TableHead-sort-icon-sub-menu{
+        width: 80px;
+    }
+}
