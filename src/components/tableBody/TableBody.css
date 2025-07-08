@@ -1,0 +1,56 @@
+.TableBody-container{
+    width: 100%;
+    height: min-content;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.TableBody-row{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TableBody-row:not(:last-child){
+    border-bottom: 1px solid #efefef;
+}
+
+.TableBody-cell{
+    overflow: auto;
+    text-align: center;
+}
+
+.TableBody-trash-icon-wrapper{
+    overflow: visible;
+    text-align: center;
+}
+
+.TableBody-trash-icon{
+    color: #820000;
+    cursor: pointer;
+    display: inline;
+}
+
+@media screen and (max-width : 768px) {
+   .TableBody-cell{
+        font-size: 10px;
+        font-weight: 400;
+    } 
+    .TableBody-trash-icon{
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    .TableBody-cell{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .TableBody-trash-icon{
+        width: 20px !important;
+        height: 20px !important;
+    }
+}

@@ -2,6 +2,7 @@
     width: 100%;
     height: min-content;
     padding: 8px;
+    margin-bottom: 16px;
     border-radius: 10px;
     background-color: #fff;
 }
@@ -14,14 +15,13 @@
 }
 
 .TableHead-sort-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     cursor: pointer;
 }
 
 .TableHead-sort-icon-wrapper{
     position: relative;
+    text-align: center;
 }
 
 .TableHead-sort-icon-wrapper:hover .TableHead-sort-icon-sub-menu{
