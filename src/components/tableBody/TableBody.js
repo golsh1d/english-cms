@@ -20,14 +20,14 @@ export default function TableBody({ props, onDelete }) {
     setFinalArray(tempArray);
   }, [props]);
 
-  function deletIconClicked() {
-    onDelete();
+  function deletIconClicked(id) {
+    onDelete(id);
   }
 
   return (
     <table className="TableBody-container">
       {finalArray.map((arr) => (
-        <tr className="TableBody-row" key={arr.id}>
+        <tr className="TableBody-row">
           {arr.map((i) => (
             <td className="TableBody-cell" style={{ width: tdWidth }}>
               {i}
@@ -39,7 +39,7 @@ export default function TableBody({ props, onDelete }) {
           >
             <DeleteForeverIcon
               className="TableBody-trash-icon"
-              onClick={deletIconClicked}
+              onClick={() => deletIconClicked(arr[0])}
             />
           </td>
         </tr>

@@ -14,23 +14,33 @@ export default function Users() {
     { id: 6, title: "Postal Code" },
   ]);
   const [tBodyData, setTBodyData] = useState();
+  const [isDelete, setIsDelete] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/users/")
       .then((res) => res.json())
-      .then((data) => setTBodyData(data));
-  }, []);
+      .then((data) => setTBodyData(data))
+      .then(setIsDelete(null))
+  }, [isDelete]);
 
   function sortByFirst() {
-    console.log("sort by first");
+    let sortedTbodyData = [...tBodyData].sort((a, b) => a.id - b.id);
+    setTBodyData(sortedTbodyData);
   }
 
   function sortByLast() {
-    console.log("sort by last");
+    let sortedTbodyData = [...tBodyData].sort((a, b) => b.id - a.id);
+    setTBodyData(sortedTbodyData);
   }
 
-  function deleteUser() {
-    console.log("user deleted");
+  function deleteUser(id) {
+    fetch(`http://localhost:3000/api/users/deleteUser/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then(setIsDelete(true))
   }
 
   return (
