@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./TableBody.css";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 export default function TableBody({ props, onDelete }) {
-  let tdWidth = `${100 / props.length}%`;
+  const [finalArray, setFinalArray] = useState([]);
+
+  let objLength = Object.keys(props[0]).length;
+  let tdWidth = `${100 / objLength}%`;
+
+  useEffect(() => {
+    finalArray.length = 0;
+    let tempArray = [];
+
+    props.map((obj) => {
+      let arr = Object.values(obj);
+      tempArray.push(arr);
+    });
+
+    setFinalArray(tempArray);
+  }, [props]);
 
   function deletIconClicked() {
     onDelete();
@@ -11,31 +26,21 @@ export default function TableBody({ props, onDelete }) {
 
   return (
     <table className="TableBody-container">
-      {props.map((obj) => (
-        <tr className="TableBody-row">
-          <td className="TableBody-cell" style={{ width: tdWidth }}>
-            {obj.name}
-          </td>
-          <td className="TableBody-cell" style={{ width: tdWidth }}>
-            {obj.family}
-          </td>
-          <td className="TableBody-cell" style={{ width: tdWidth }}>
-            {obj.email}
-          </td>
-          <td className="TableBody-cell" style={{ width: tdWidth }}>
-            {obj.phone}
-          </td>
-          <td className="TableBody-cell" style={{ width: tdWidth }}>
-            {obj.address}
-          </td>
+      {finalArray.map((arr) => (
+        <tr className="TableBody-row" key={arr.id}>
+          {arr.map((i) => (
+            <td className="TableBody-cell" style={{ width: tdWidth }}>
+              {i}
+            </td>
+          ))}
           <td
-            className="TableBody-cell TableBody-trash-icon-wrapper"
+            className="TableBody-trash-icon-wrapper"
             style={{ width: tdWidth }}
-            onClick={deletIconClicked}
           >
-            <div className="TableBody-trash-icon">
-              <DeleteForeverIcon />
-            </div>
+            <DeleteForeverIcon
+              className="TableBody-trash-icon"
+              onClick={deletIconClicked}
+            />
           </td>
         </tr>
       ))}

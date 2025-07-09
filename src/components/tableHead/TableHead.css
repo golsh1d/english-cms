@@ -53,6 +53,10 @@
     padding-top: 8px;
 }
 
+.TableHead-cell{
+    text-align: center;
+}
+
 @media screen and (max-width : 768px) {
    .TableHead-cell{
         font-size: 10px;

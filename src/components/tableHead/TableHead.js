@@ -1,11 +1,10 @@
 import React from "react";
 import "./TableHead.css";
-import { useState, useEffect } from "react";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
 
 export default function TableHead({ props, onSortByFirst, onSortByLast }) {
-  let tdWidth = `${100 / props.length}%`;
-  
+  let tdWidth = `${100 / (props.length)}%`;
+
   function sortByFirstClicked() {
     onSortByFirst();
   }
@@ -18,7 +17,11 @@ export default function TableHead({ props, onSortByFirst, onSortByLast }) {
     <table className="TableHead-container">
       <tr className="TableHead-row">
         {props.map((obj) => (
-          <th className="TableHead-cell" style={{ width: tdWidth }}>
+          <th
+            className="TableHead-cell"
+            style={{ width: tdWidth }}
+            key={obj.id}
+          >
             {obj.title}
           </th>
         ))}

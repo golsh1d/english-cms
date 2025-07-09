@@ -2,43 +2,24 @@ import React from "react";
 import "./Users.css";
 import TableHead from "../../components/tableHead/TableHead";
 import TableBody from "../../components/tableBody/TableBody";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Users() {
   const [tHeadData, setTHeadData] = useState([
-    { id: 1, title: "Name" },
-    { id: 2, title: "Family Name" },
-    { id: 3, title: "Email" },
+    { id: 1, title: "ID" },
+    { id: 2, title: "Name" },
+    { id: 3, title: "Family Name" },
     { id: 4, title: "Phone" },
     { id: 5, title: "Address" },
+    { id: 6, title: "Postal Code" },
   ]);
+  const [tBodyData, setTBodyData] = useState();
 
-  const [tBodyData, setBodyData] = useState([
-    {
-      id: 1,
-      name: "golshid",
-      family: "ebrahimi",
-      email: "golshid@gmail.com",
-      phone: "09124601305",
-      address: "iran karaj",
-    },
-    {
-      id: 2,
-      name: "hamid",
-      family: "booslik",
-      email: "hoohoo@gmail.com",
-      phone: "09120001122",
-      address: "iran tehran",
-    },
-    {
-      id: 3,
-      name: "neda",
-      family: "tariverdi",
-      email: "nene@gmail.com",
-      phone: "09122600520",
-      address: "iran darake",
-    },
-  ]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/users/")
+      .then((res) => res.json())
+      .then((data) => setTBodyData(data));
+  }, []);
 
   function sortByFirst() {
     console.log("sort by first");
@@ -59,7 +40,7 @@ export default function Users() {
         onSortByFirst={sortByFirst}
         onSortByLast={sortByLast}
       />
-      <TableBody props={tBodyData} onDelete={deleteUser}/>
+      {tBodyData && <TableBody props={tBodyData} onDelete={deleteUser} />}
     </>
   );
 }
