@@ -6,7 +6,7 @@ import DeleteModal from "../deleteModal/DeleteModal";
 export default function TableBody({ props, onDelete }) {
   const [finalArray, setFinalArray] = useState([]);
   const [modalIsShown, setModalIsShown] = useState(false);
-  const [userID, setUserID] = useState();
+  const [ID, setID] = useState();
 
   let objLength = Object.keys(props[0]).length;
   let tdWidth = `${100 / objLength}%`;
@@ -24,7 +24,7 @@ export default function TableBody({ props, onDelete }) {
   }, [props]);
 
   function deletIconClicked(id) {
-    setUserID(id);
+    setID(id);
     setModalIsShown(true);
   }
 
@@ -60,7 +60,7 @@ export default function TableBody({ props, onDelete }) {
         ))}
       </table>
       {modalIsShown && (
-        <DeleteModal onYes={() => deleteUser(userID)} onNo={closeModal}>
+        <DeleteModal onYes={() => deleteUser(ID)} onNo={closeModal}>
           Are you sure you want to delete the user?
         </DeleteModal>
       )}
