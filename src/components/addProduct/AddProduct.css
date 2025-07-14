@@ -1,0 +1,67 @@
+.AddProduct-container{
+    width: 100%;
+    height: min-content;
+    padding: 8px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.AddProduct-title{
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.AddProduct-input-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.AddProduct-input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #C7B7A3;
+    font-weight: 500;
+}
+
+::placeholder{
+    color: rgb(50, 50, 50);
+}
+
+.AddProduct-btn-container{
+    width: 100%;
+    height: min-content;
+}
+
+.AddProduct-btn{
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #efefef;
+    font-weight: 500;
+}
+
+@media screen and (max-width : 768px) {
+    .AddProduct-title,
+    .AddProduct-input,
+    .AddProduct-btn {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    .AddProduct-title,
+    .AddProduct-input,
+    .AddProduct-btn {
+        font-size: 14px;
+    }
+}
